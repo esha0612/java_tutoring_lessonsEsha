@@ -42,8 +42,38 @@ public class primitive_dtypes {
         System.out.println("boolean: " + bool);
 
         // ternary operator
+        // boolean to int is not an allowed type cast, implicit or explicit
         int i = bool ? 1 : 0;
         System.out.println("int: " + i);
 
+        // character to integer
+        char c = '0';
+        System.out.println("char: " + c);
+        int i2 = c;
+        System.out.println("convert to int: " + i2);
+
+        // integer to character
+        int i3 = 65;
+        System.out.println("int: " + i3);
+        char c2 = (char) i3;
+        System.out.println("convert to char: " + c2);
+
+        // a short example with the aforementioned info
+        char c3 = 'A';
+        System.out.println("char: " + c3);
+        int i4 = c3;
+        System.out.println("convert to int: " + i4);
+        // we want to print true or false based on whether the character formed by adding these two is a letter in the alphabet
+        System.out.println("is letter: " + (((c3 + i4) >= 95 && (c3 + i4) <= 122) || ((c3 + i4) >= 65 && (c3 + i4) <= 90)));
+        // another way to do this is using the isAlphabetic method of the Character class
+        System.out.println("is letter: " + Character.isAlphabetic(c3 + i4));
+
+        // using the Character class instead of primitive char
+        Character c4 = 'A';
+        System.out.println("char: " + c4);
+        Integer i5 = 4;
+        System.out.println("convert to int: " + i5);
+        Integer i6 = Integer.valueOf(c4);
+        System.out.println("convert to int: " + i6);
     }
 }
