@@ -11,3 +11,7 @@
 * The name __args__ is not mandatory as long as it is of type `String[]`.
 
 * Each of the primitive data types have their own __wrapper__ class, for example, the class _Integer_ wraps the _int_ type. So, to convert, say a String to an int, we use a wrapper class parsing function, like `Integer.parseInt(String s)`.
+
+* Links: [AP Test 1](https://apcentral.collegeboard.org/media/pdf/ap-computer-science-a-course-at-a-glance.pdf)
+* Links: [AP Test 2](https://apcentral.collegeboard.org/media/pdf/ap-computer-science-a-course-overview.pdf)
+* Links: [AP Test 3](https://apcentral.collegeboard.org/media/pdf/ap-computer-science-a-sample-syllabus-1_1.pdf)
