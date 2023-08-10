@@ -65,6 +65,8 @@ public class primitive_dtypes {
         System.out.println("convert to int: " + i4);
         // we want to print true or false based on whether the character formed by adding these two is a letter in the alphabet
         System.out.println("is letter: " + (((c3 + i4) >= 95 && (c3 + i4) <= 122) || ((c3 + i4) >= 65 && (c3 + i4) <= 90)));
+        // we can also check as characters and not integers
+        System.out.println("is letter: " + (((char) (c3 + i4) >= 'a' && (char) (c3 + i4) <= 'z') || ((char) (c3 + i4) >= 'A' && (char) (c3 + i4) <= 'Z')));
         // another way to do this is using the isAlphabetic method of the Character class
         System.out.println("is letter: " + Character.isAlphabetic(c3 + i4));
 
