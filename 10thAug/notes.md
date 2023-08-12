@@ -18,4 +18,4 @@
 
 * Java __does not__ support explicit pointers unlike C/C++, because JRE is very conscious of memory security, and direct emmory manipulation is usually not allowed (we can, however, manipulate some things using the _Reflection API_). Java does, however, use pointers (or more accurately, reference manipulation), internally.
 
-* Java and Python use __call by assignment__, which is neither __call by value__ or __call by reference__. Instead, a __copy of the reference__ is provided to the parameter, which means modifying the parameter does modify the original variable, but any reassignment made to the parameter will not affect the original variable afterwards, since we are now pointing to different memory locations.
+* Java and Python use __call by assignment__, which is neither __call by value__ or __call by reference__. Instead, a __copy of the reference__ is provided to the parameter, which means modifying the parameter does modify the original variable, but any reassignment made to the parameter itself will not affect the original variable afterwards, since we are now pointing to different memory locations.

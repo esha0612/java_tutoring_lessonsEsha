@@ -5,7 +5,7 @@ public class Recap {
     // for each value, it sums up their factors and replaces the value with the sum
     // e.g. [1, 2, 3, 4, 5] -> [1, 3, 4, 7, 6]
     // return the array with the sum of factors
-    private static int [] sumOfFactors (int [] numbers) {
+    private static void sumOfFactors (int [] numbers) {
         // your code here
         for (int i = 0; i < numbers.length; i++) {
             int sum = 0;
@@ -16,7 +16,6 @@ public class Recap {
             }
             numbers[i] = sum;
         }
-        return numbers;
     }
 
     public static void main (String [] args) {
@@ -46,7 +45,8 @@ public class Recap {
         // call the function sumOfFactors
         // print the result
         System.out.println("The original array is: " + Arrays.toString(numbers));
-        System.out.println("The result is: " + Arrays.toString(sumOfFactors(numbers)));
+        sumOfFactors(numbers);
+        System.out.println("The result is: " + Arrays.toString(numbers));
         System.out.println("The original array after calling the fucntion is: " + Arrays.toString(numbers));
     }
 }

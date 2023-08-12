@@ -18,6 +18,11 @@ public class CopyMechanics {
         return y;
     }
 
+    public static int modify4 (int y) {
+        y++;
+        return y;
+    }
+
     public static void main (String [] args) {
         int[] x = { 5, 10 };
         System.out.println("The value of x is: " + Arrays.toString(x));
@@ -32,6 +37,11 @@ public class CopyMechanics {
         int y = 5;
         System.out.println("The value of y is: " + y);
         System.out.println("The value of y returned from the function is: " + modify3(y));
+        System.out.println("The value of y after calling the function is: " + y);
+
+        y = 5;
+        System.out.println("The value of y is: " + y);
+        System.out.println("The value of y returned from the function is: " + modify4(y));
         System.out.println("The value of y after calling the function is: " + y);
     }
 }
