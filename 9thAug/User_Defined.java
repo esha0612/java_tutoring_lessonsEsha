@@ -52,7 +52,7 @@ public class User_Defined {
         // the format is String.contains(String)
         boolean b3 = s3.contains("hello");
 
-        // how do we return the first character not matching between two Strings?
+        // how do we check if two Strings are lexicographically equal? (returns positive if s3 > s4, negative if s3 < s4, 0 if s3 == s4)
         // the format is String.compareTo(String)
         int i = s3.compareTo("hello vorld");
         System.out.printf("Difference between %s and %s is i = %d\n", s3, s4, i);

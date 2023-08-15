@@ -27,18 +27,49 @@ class Signboard {
     protected int getNumLines() {
         int numLines = 0;
         // your code here
+        int nCount=0;
+        for (int i=0; i<message.length(); i++) {
 
+            if (nCount < maxCharsPerLine ){
+                nCount++;
+            }
+            else{
+                numLines++;
+                nCount=0;
+            }
+        }
+        numLines++;
+        System.out.println(numLines);
         return numLines;
     }
 
-    protected String displayMessage() {
+    protected void displayMessage() {
         String display = "";
         // your code here
+        int nCount=0;
+        message = message.trim();
+        for (int i=0; i<message.length(); i++) {
 
-        return display;
+            if (nCount < maxCharsPerLine){
+                display = display + message.charAt(i);
+                nCount++;
+            }
+            else{
+                // if last character is a space then ignore it
+                if (message.charAt(i) == ' '){
+                    continue;
+                }
+
+                display = display + "\n";
+                display = display + message.charAt(i);
+                nCount = 0;
+            }
+        }
+        System.out.println(display);
     }
 
     public static void main(String[] args) {
+        //System.out.println("Shiva");
         Signboard signboard = new Signboard("Hello World", 5);
         signboard.displayMessage();
     }

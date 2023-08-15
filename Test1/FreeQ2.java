@@ -11,46 +11,87 @@ class FreeQ2 {
     // returns the sum of 2 numbers a and b
     private double add(double a, double b) {
         // your code here
+        return a+b;
     }
 
     // returns the sum of an array of numbers
     private double add(double[] numbers) {
         // your code here
+        int sum = 0;
+        for (double element : numbers){
+            sum += element;
+        }
+        return sum;
     }
 
     // returns the concatenation of 2 strings a and b
     private String add(String a, String b) {
         // your code here
+        return a+b;
     }
 
     // returns the difference of 2 numbers a and b
     private double subtract(double a, double b) {
         // your code here
+        return a-b;
     }
 
     // returns the first differing character between 2 strings a and b
     private char subtract(String a, String b) {
         // your code here
+        int length = Math.min(a.length(), b.length());
+        for (int i = 0; i < length; i++) {
+            char aChar = a.charAt(i);
+            char bChar = b.charAt(i);
+            if (aChar != bChar) {
+                return aChar;
+            }
+        }
+        return a.length() < b.length() ? b.charAt(length) : a.charAt(length);
     }
-
+       
     // returns the product of 2 numbers a and b
     private double multiply(double a, double b) {
-        // your code here
+        return a*b;
     }
 
     // returns the product of an array of numbers
     private double multiply(double[] numbers) {
         // your code here
+        double product = 1;
+        for (double index : numbers) {
+            product *= index;
+        }
+        return product;
     }
 
     // returns the product of 2 matrices a and b
     private double[][] multiply(double[][] a, double[][] b) {
         // your code here
+        int rowsA = a.length;
+        int colsA = a[0].length;
+        int colsB = b[0].length;
+    
+        double[][] result = new double[rowsA][colsB];
+    
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsB; j++) {
+                double sum = 0.0;
+                for (int k = 0; k < colsA; k++) {
+                    sum += a[i][k] * b[k][j];
+                }
+                result[i][j] = sum;
+            }
+        }
+    
+        return result;
+
     }
 
     // returns the quotient of 2 numbers a and b
     private double divide(double a, double b) {
         // your code here
+        return a/b;
     }
 
     // test the above methods inside this main method

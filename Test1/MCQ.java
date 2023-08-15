@@ -16,7 +16,7 @@ public class MCQ {
     }
     /* 
      * What is the output of method1?
-     * a) 30
+     * a) 30 answer!
      * b) 60
      * c) 15
      * d) 10
@@ -33,7 +33,7 @@ public class MCQ {
      * What is the output of method2?
      * a) 65534
      * b) 32767
-     * c) 0
+     * c) 0 Answer!
      * d) 65535
      */
 
@@ -58,7 +58,7 @@ public class MCQ {
     }
     /* 
      * What is the output of method3?
-     * a) Hello! Hello?
+     * a) Hello! Hello? Answer
      * b) Hello! Hello!
      * c) Hello!
      * d) Hello?
@@ -84,7 +84,7 @@ public class MCQ {
     /*
      * What is the output of method4?
      * a) 2 4 6 8 10
-     * b) 1 2 3 4 5
+     * b) 1 2 3 4 5 Need help, don't understand
      * c) Compilation error
      * d) Runtime error
      */
