@@ -1,5 +1,3 @@
-package Test2;
-
 public class MCQ6 {
     private static int $;
 
@@ -11,3 +9,4 @@ public class MCQ6 {
 }
 
 // Predict the output. If there is an error, specify the error type and the line number(s).
+// Error is in line 9 because a_b is not initialized.
