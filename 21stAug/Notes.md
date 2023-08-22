@@ -19,4 +19,4 @@
 
 * There are 3 cases where a __private constructor__ is acceptable: either the main method belongs to the same class (and can hence locate the constructor), or we are creating a __Singleton object blueprint__ (use case: DAO model), or we use a public constructor to delegate among a set of private constructors.
 
-* __static__ member methods of a class can be called directly (aka without creating an object of the class), using the format `className.method()`. This logic is used for Singleton classes.
+* __static__ member methods of a class can be called directly (aka without creating an object of the class), using the format `className.method()`. This logic is used for Singleton classes. A great use case for Singleton classes is to simulate linked lists.
