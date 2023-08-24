@@ -14,7 +14,7 @@ public class MCQ6 {
 }
 
 // The output will be:
-// 1. [9]
+// 1. [9] --> Correct
 // 2. [8]
 // 3. [6, 8]
 // 4. Something like [Ljava.lang.String;@160bc7c0

@@ -29,6 +29,11 @@ public class FreeCode1 {
     public void repopulate() {
         // fill each member of the grid with a random number between 0 and 9
         // your code here
+        for (int i = 0; i < MAX; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                grid[i][j] = (int) (Math.random() * 10);
+            }
+        }
     }
 
     // count increasing columns method (to be completed)
@@ -38,6 +43,32 @@ public class FreeCode1 {
         // columns with no numbers should not be counted
         // singleton columns (with only one number) should be counted
         // your code here
-        return 0;
+        int count = 0;
+        for (int i = 0;  i < MAX; i++) {
+            boolean increasing = true;
+            // disqualify columns with no numbers
+            if (grid[i].length == 0) {
+                continue;
+            }
+            for (int j = 0; j < grid[i].length - 1; j++) {
+                if (grid[i][j] >= grid[i][j + 1]) {
+                    increasing = false;
+                }
+            }
+            count += increasing ? 1 : 0;
+        }
+        return count;
+    }
+
+    // main method
+    public static void main(String[] args) {
+        // create a new FreeCode1 object
+        FreeCode1 fc = new FreeCode1();
+        // repopulate the grid
+        fc.repopulate();
+        // print the grid
+        fc.printGrid();
+        // print the number of increasing columns
+        System.out.println("Number of increasing columns: " + fc.countIncreasingColumns());
     }
 }

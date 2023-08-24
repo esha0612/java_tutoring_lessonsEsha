@@ -5,7 +5,7 @@ public class MCQ1 {
 }
 
 // The output will be:
-// 1. 0.0
+// 1. 0.0 --> correct answer (double + float -> min value is positive)
 // 2. 4.9E-324
 // 3. Compilation fails
 // 4. None of the above

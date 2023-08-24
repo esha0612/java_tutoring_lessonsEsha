@@ -6,3 +6,5 @@ public class MCQ10 {
 }
 
 // Predict the output of the code snippet above. You may use a scientific calculator.
+// The output will be:
+// 11 --> Correct (5 + -~5 = 5 + -(-6) = 5 + 6 = 11)

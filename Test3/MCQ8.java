@@ -8,3 +8,6 @@ public class MCQ8 {
 }
 
 // Predict the output of the code snippet above. You may use a calculator.
+// The output will be:
+// 31536000000
+// 1726327040 (for this one, the value is treated as int and overflows, so the JRE truncates in binary to bring it close to INT_MAX)
