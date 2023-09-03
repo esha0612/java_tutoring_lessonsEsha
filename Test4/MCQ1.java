@@ -10,3 +10,5 @@ public class MCQ1 {
         System.out.println("s2.a value :"+s2.a);
     }
 }
+
+// Predict the output

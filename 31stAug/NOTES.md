@@ -26,4 +26,4 @@
 
 * __TBD__: Procedural Abstraction (and specific call cases for static and non-static methods from class and package context).
 
-* __TBD__:  Abstract classes, abstract methods, multiple inheritance using interfaces.
+* __TBD__:  Abstract classes, abstract methods, multiple inheritance using interfaces, static and initialization blocks.
