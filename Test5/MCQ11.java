@@ -10,7 +10,7 @@ class B extends A {
     }
 }
 
-public class MCQ1 {
+public class MCQ11 {
     public static void main(String[] args) {
         A a = new B();
         a.show();
