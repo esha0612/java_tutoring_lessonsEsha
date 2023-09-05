@@ -14,6 +14,8 @@
 
 * Interfaces are _abstract_ by default, and therefore cannot be instantiated.
 
+* Interfaces do not allow function bodies for _non-static_ methods.
+
 * Interface attributes are by default _public_, _static_ and _final_.
 
 * Interface methods are by default _public_ and _abstract_.
@@ -26,4 +28,4 @@
 
 * __TBD__: Procedural Abstraction (and specific call cases for static and non-static methods from class and package context).
 
-* __TBD__:  Abstract classes, abstract methods, multiple inheritance using interfaces, static and initialization blocks.
+* __TBD__: Abstract classes, abstract methods, multiple inheritance using interfaces, static and initialization blocks.
