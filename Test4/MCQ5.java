@@ -18,4 +18,5 @@ public class MCQ5 {
     }
 }
 
-// Predict the output
+// Predict the output:
+// static block is called
