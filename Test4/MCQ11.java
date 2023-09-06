@@ -22,6 +22,6 @@ public class MCQ11
 
 // The output is:
 // 1. 2121
-// 2. 1212
+// 2. 1212 --> my guess
 // 3. Compilation error
 // 4. Runtime error
