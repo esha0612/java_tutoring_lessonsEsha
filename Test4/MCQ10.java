@@ -32,3 +32,5 @@ public class MCQ10 extends ClassOne
 }
 
 // Predict the output
+// 191919
+// 191919
