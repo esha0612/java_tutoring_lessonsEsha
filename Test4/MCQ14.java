@@ -29,3 +29,4 @@ public class MCQ14
 }
 
 // Predict the output
+// 10
