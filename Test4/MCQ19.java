@@ -47,3 +47,12 @@ public class MCQ19
 }
 
 // Predict the output
+// 3
+// 2
+// 1
+// 3
+// 2
+// 1
+// 3
+// 3
+// 2
