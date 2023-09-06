@@ -32,6 +32,6 @@ public class MCQ6
 
 // The output is:
 // 1. FIRST SECOND THIRD
-// 2. THIRD SECOND FIRST
+// 2. THIRD SECOND FIRST --> my guess
 // 3. THIRD FIRST SECOND
 // 4. Compile time error
