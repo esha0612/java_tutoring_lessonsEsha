@@ -41,3 +41,9 @@ public class MCQ7
 }
 
 // Predict the output
+//C
+//B
+//A
+//F
+//E
+//D

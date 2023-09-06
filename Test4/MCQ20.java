@@ -25,3 +25,5 @@ public class MCQ20
         System.out.println(c.methodC());
     }
 }
+// My Predicted Output
+// 2

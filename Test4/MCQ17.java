@@ -17,3 +17,5 @@ public class MCQ17
 } 
 
 // Predict the output
+// Main Method
+// Static Block-2

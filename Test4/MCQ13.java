@@ -20,7 +20,7 @@ public class MCQ13
 }
 
 // The output is:
-// 1. 132021
+// 1. 132021 --my guess
 // 2. 20235
 // 3. Compilation error
 // 4. Runtime error

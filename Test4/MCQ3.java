@@ -28,3 +28,6 @@ public class MCQ3
 }
 
 // Predict the output
+//1
+//2
+//3

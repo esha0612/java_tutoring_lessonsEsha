@@ -12,3 +12,7 @@ public class MCQ1 {
 }
 
 // Predict the output
+// 10
+// 10
+// 20
+// 20

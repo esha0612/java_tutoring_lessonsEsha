@@ -33,3 +33,6 @@ public class MCQ4
 }
 
 // Predict the output
+// Class A
+// Class B
+// Class C

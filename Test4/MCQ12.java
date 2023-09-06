@@ -22,3 +22,5 @@ public class MCQ12 {
 }
 
 // Predict the output
+// One
+// Two
