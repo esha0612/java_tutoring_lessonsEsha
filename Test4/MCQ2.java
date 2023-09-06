@@ -18,7 +18,7 @@ public class MCQ2
 }
 
 // The output will be:
-// 1. 10
-// 2. 20
+// 1. 10 --> Correct answer 
+// 2. 20 
 // 3. Compilation Error
 // 4. Runtime Error
