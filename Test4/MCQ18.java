@@ -13,5 +13,5 @@ public class MCQ18
 // The output is:
 // 1. [Java, Python, Hadoop]
 // 2. [Java|Python|Hadoop]
-// 3. [Java\\|Python\\|Hadoop]
+// 3. [Java\\|Python\\|Hadoop] --> my guess
 // 4. [Java\\ Python\\ Hadoop]
