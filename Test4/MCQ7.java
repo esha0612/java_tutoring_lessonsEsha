@@ -47,3 +47,5 @@ public class MCQ7
 //F
 //E
 //D
+
+// Answer: ADBCEF (Memorize this)

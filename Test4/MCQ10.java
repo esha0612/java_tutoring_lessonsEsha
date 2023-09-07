@@ -1,14 +1,14 @@
 class ClassOne
 {
-     static int i, j = 191919;
- 
-     {
-         --i;
-     }
- 
-     {
-         j++;
-     }
+    static int i, j = 191919;
+
+    {
+        --i;
+    }
+
+    {
+        j++;
+    }
 }
  
 public class MCQ10 extends ClassOne
@@ -22,7 +22,7 @@ public class MCQ10 extends ClassOne
     {
         --j;
     }
- 
+
     public static void main(String[] args)
     {
         System.out.println(i);
@@ -34,3 +34,7 @@ public class MCQ10 extends ClassOne
 // Predict the output
 // 191919
 // 191919
+
+// Answer:
+// 1
+// 191918

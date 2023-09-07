@@ -28,6 +28,6 @@ public class MCQ8
 
 // The output is:
 // 1. 26 --> my guess
-// 2. 27
+// 2. 27 --> correct
 // 3. 28
 // 4. 29
