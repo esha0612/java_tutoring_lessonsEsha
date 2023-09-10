@@ -13,7 +13,7 @@ class B extends A {
 public class MCQ4 {
     public static void main(String[] args) {
         A a = (A) new B();
-        a.show();        
+        a.show();
     }
 }
 

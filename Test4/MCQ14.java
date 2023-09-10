@@ -21,7 +21,7 @@ public class MCQ14
         {
             void methodOfA()
             {
-                System.out.println(i++);
+                System.out.println(++i);
             }
         };
         a.methodOfA();

@@ -13,9 +13,13 @@ public class MCQ17
     static  
     {  
         System.out.println("Static Block-2");  
-    }   
+    }
 } 
 
 // Predict the output
-// Main Method
+// Static Block-1
 // Static Block-2
+// Main Method
+
+// Static blocks are called first since they are called when the class is loaded into memory.
+// If there are multiple static blocks, then they are executed in procedural order.

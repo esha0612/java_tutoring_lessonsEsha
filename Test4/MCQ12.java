@@ -4,7 +4,7 @@ abstract class A {
 
 class B extends A {
     void m1(A a) {
-        System.out.println("One"); 	
+        System.out.println("One");
     }
 }
 
@@ -22,5 +22,5 @@ public class MCQ12 {
 }
 
 // Predict the output
-// One
 // Two
+// One

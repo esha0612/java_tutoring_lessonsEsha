@@ -6,12 +6,12 @@ public class MCQ18
     {  
         String str="Java|Python|Hadoop";  
         String[] array = str.split("\\|");  
-        System.out.println(Arrays.toString(array));  
+        System.out.println(Arrays.toString(array));
     }  
 }
 
 // The output is:
-// 1. [Java, Python, Hadoop]
+// 1. [Java, Python, Hadoop] --> correct answer
 // 2. [Java|Python|Hadoop]
 // 3. [Java\\|Python\\|Hadoop] --> my guess
 // 4. [Java\\ Python\\ Hadoop]

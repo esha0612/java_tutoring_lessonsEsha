@@ -14,7 +14,7 @@ public class MCQ7 {
     public static void main(String[] args) {
         B b = (B) new A();
         A a = b;
-        a.show();        
+        a.show();
     }
 }
 
@@ -22,4 +22,4 @@ public class MCQ7 {
 // 1. A
 // 2. B
 // 3. Compilation error
-// 4. Runtime error
+// 4. Runtime error --> correct answer

@@ -22,7 +22,7 @@ public class MCQ20
     {
         I.C c = new I.C(000);
          
-        System.out.println(c.methodC());
+        System.out.println(c.methodC()); 
     }
 }
 // My Predicted Output
