@@ -1,0 +1,6 @@
+The Boolean expression
+∼(p∨q)∨(∼p∧q)
+is equivalent to :
+
+(∼p∧∼q)∨(∼p∧q)
+~p
