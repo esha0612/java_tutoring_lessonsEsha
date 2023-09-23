@@ -20,5 +20,5 @@ public class MCQ3 {
 // The output is:
 // 1. A
 // 2. B
-// 3. Compilation error
+// 3. Compilation error --> my guess, cannot type cast from subclass to base class 
 // 4. Runtime error
