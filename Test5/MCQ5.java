@@ -20,5 +20,5 @@ public class MCQ5 {
 // The output is:
 // 1. A
 // 2. B
-// 3. Compilation error
-// 4. Runtime error
+// 3. Compilation error 
+// 4. Runtime error ---> my guess, parent class cannot by typecasted to subclass
