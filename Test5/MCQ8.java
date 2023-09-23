@@ -18,6 +18,6 @@ public class MCQ8 {
 
 // The output is:
 // 1. A
-// 2. B
-// 3. Compilation error
+// 2. B --> my guess
+// 3. Compilation error 
 // 4. Runtime error
