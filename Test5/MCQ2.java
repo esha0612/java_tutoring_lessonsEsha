@@ -21,4 +21,4 @@ public class MCQ2 {
 // 1. A
 // 2. B
 // 3. Compilation error
-// 4. Runtime error
+// 4. Runtime error ---> my guess (explicit type casting leads to runtime error)
