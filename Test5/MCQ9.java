@@ -29,7 +29,7 @@ public class MCQ9 {
 }
 
 // The output is:
-// 1. 5
+// 1. 5 --> my guess
 // 2. 10
 // 3. Compilation error
 // 4. Runtime error

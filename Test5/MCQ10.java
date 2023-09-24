@@ -17,3 +17,5 @@ public class MCQ10 {
 }
 
 // Predict the output
+//s1 and s2 not equal
+//s1 and s3 equal

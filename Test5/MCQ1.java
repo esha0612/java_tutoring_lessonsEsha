@@ -19,6 +19,6 @@ public class MCQ1 {
 
 // The output is:
 // 1. A
-// 2. B
+// 2. B --> correct, object a behaves like the object at right
 // 3. Compilation error
 // 4. Runtime error
