@@ -19,6 +19,6 @@ public class MCQ4 {
 
 // The output is:
 // 1. A
-// 2. B
+// 2. B --> correct answer
 // 3. Compilation error 
 // 4. Runtime error --> my guess
