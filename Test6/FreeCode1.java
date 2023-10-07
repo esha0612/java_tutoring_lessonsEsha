@@ -9,7 +9,13 @@ public class FreeCode1 {
     // You are not permitted to use the split() method of the String class.
     public static int countAs(String s, char c) {
         // TODO: Write your code here
-        return 0;
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.indexOf(c, i) == i) {
+                count++;
+            }
+        }
+        return count;
     }
 
     // Write a method that takes in a String and returns the number of
@@ -17,7 +23,8 @@ public class FreeCode1 {
     // Feel free to use the countAs() method you wrote above.
     public static int countVowels(String s) {
         // TODO: Write your code here
-        return 0;
+        String dummy = s.toLowerCase();
+        return countAs(dummy, 'a') + countAs(dummy, 'e') + countAs(dummy, 'i') + countAs(dummy, 'o') + countAs(dummy, 'u');
     }
 
     // Main method for testing your code.

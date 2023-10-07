@@ -21,9 +21,8 @@ public class FreeCode2 {
     // The method should return -1 if the height or weight is 0.
     public double getBMI() {
         // TODO: Write your code here
-        if (weight==0 || height==0){
-            return -1.0;
-        return (double) weight / (height*height*703);
+
+        return (height == 0 || weight == 0) ? -1 : weight / (height * height * 1.0) * 703;
     }
 
     // Write a method that returns the BMI category of the person represented by this object.
@@ -34,18 +33,19 @@ public class FreeCode2 {
     // The method should return "Invalid" if the height or weight is 0.
     public String getBMICategory() {
         // TODO: Write your code here
-        if (getBMI()<18.5){
-            return "Underweight";
-        }else if (getBMI()>18.5&&getBMI()<24.9){
-            return "Normal weight";
-        } else if (getBMI()>25&&getBMI()<29.9){
-            return "Overweight";
-        } else if (getBMI()>=30){
-            return "Obesity";
-        } else {
+        double bmi = getBMI();
+
+        if (bmi == -1) {
             return "Invalid";
+        } else if (bmi < 18.5) {
+            return "Underweight";
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
+            return "Normal weight";
+        } else if (bmi >= 25 && bmi <= 29.9) {
+            return "Overweight";
+        } else {
+            return "Obesity";
         }
-       
     }
 
     // Main method for testing your code.
