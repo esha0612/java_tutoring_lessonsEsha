@@ -26,3 +26,4 @@ public class MCQ2 {
 
 
 // Predict the output of the program above.
+//Reverses the string
