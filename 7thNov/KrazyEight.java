@@ -9,8 +9,8 @@
 // 8. Everything else constitutes the draw pile.
 // 9. If player is unable to put a card down, they must draw a card from the draw pile.
 // 10. Whichever player empties their hand first is declared the victor.
+// 11. If the draw pile is empty, the discard pile becomes the draw pile.
 
-import java.io.IOException;
 import java.util.Scanner;
 
 class State {
@@ -185,8 +185,8 @@ class State {
         return result;
     }
 
-    // Display the player's hand in a readable format.
-    public void displayPlayerHand() {
+    // Display either player's hand in a readable format.
+    public void displayPlayerHand(String playerHand) {
         // The player's hand.
         String hand = "";
         // For each card in the player's hand.
@@ -290,6 +290,44 @@ class State {
         return false;
     }
 
+    // Check if the card entered by the palyer can be played.
+    public boolean checkComputerCardValidity(String card) {
+        // First, check if the card is in the proper format.
+        if (!isValidCard(card)) {
+            // The card is not in the proper format.
+            return false;
+        }
+        // Next, check if the card is in the player's hand.
+        if (!computerHand.contains(card)) {
+            // The card is not in the player's hand.
+            return false;
+        }
+        // Next, check if the card can be played according to the rules.
+        // For this, we need the top card of the discard pile.
+        String topCard = returnTopPlayedCard();
+        // If the card is of the same number, it can be played and the player's turn continues.
+        if (card.charAt(0) == topCard.charAt(0)) {
+            // The card can be played.
+            return true;
+        }
+        // If the card is of the same family, it can be played and the player's turn ends.
+        if (card.charAt(1) == topCard.charAt(1)) {
+            // The card can be played.
+            // The turn flips.
+            playerTurn = !playerTurn;
+            return true;
+        }
+        // If the player enters an 8, it can be played and the player's turn ends.
+        if (card.charAt(0) == '8') {
+            // The card can be played.
+            // The turn flips.
+            playerTurn = !playerTurn;
+            return true;
+        }
+        // If none of the above conditions are satisfied, the card cannot be played.
+        return false;
+    }
+
     // Check if the player has any valid cards to play.
     public boolean checkPlayerPlayable() {
         // For each card in the player's hand.
@@ -319,8 +357,7 @@ class State {
             // The card.
             String card = computerHand.substring(i, i + 3);
             // Check if the card is valid.
-            if (checkPlayerCardValidity(card)) {
-                // The card is valid.
+            if (checkComputerCardValidity(card)) {                // The card is valid.
                 return card;
             }
         }
@@ -334,7 +371,7 @@ class State {
     public void PlayerTurn(Scanner sc) {
         // Display the player's hand.
         System.out.println("Your hand: ");
-        displayPlayerHand();
+        displayPlayerHand(playerHand);
 
         // Display the top card of the discard pile.
         System.out.println("Top card of the discard pile:\n" + displayCard(returnTopPlayedCard()));
@@ -352,9 +389,10 @@ class State {
             // The player skip counter is incremented.
             playerSkipCounter++;
             // If the player skip counter is 3, the player's turn ends.
-            if (playerSkipCounter == 3) {
+            if (playerSkipCounter % 3 == 0) {
                 // The player's turn ends.
                 playerTurn = !playerTurn;
+                playerSkipCounter = 0;
             }
             return;
         }
@@ -367,22 +405,15 @@ class State {
         // If the player enters None, skip the turn.
         if (card.equals("None")) {
             // The player skips the turn.
-            System.out.println("You skipped your turn.\n");
+            System.out.println("You skipped your turn. You must draw a card.\n");
             // Draw a card from the draw pile.
             String drawnCard = drawCard();
             // Add the card to the player's hand.
             playerHand += drawnCard;
             // Display the card.
             System.out.println("You drew:\n" + displayCard(drawnCard) + "\n");
-            // The player skip counter is incremented.
-            playerSkipCounter++;
-            // If the player skip counter is 3, the player's turn ends.
-            if (playerSkipCounter == 3) {
-                // The player's turn ends.
-                playerTurn = !playerTurn;
-                // The player skip counter is reset.
-                playerSkipCounter = 0;
-            }
+            // The player turn is flipped.
+            playerTurn = !playerTurn;
             return;
         }
         // If user enters 10 instead of T, replace it with T.
@@ -418,6 +449,9 @@ class State {
         // Check if the computer has any valid cards to play. If not, draw a card and skip the turn automatically.
         String card = getValidComputerCard();
 
+        // Print how many cards the computer has.
+        System.out.println("The computer has " + (computerHand.length() / 3) + " cards.");
+
         if (card.equals("")) {
             // The computer has no valid cards to play.
             System.out.println("The computer has no valid cards to play. It must draw a card.\n");
@@ -425,12 +459,12 @@ class State {
             String drawnCard = drawCard();
             // Add the card to the computer's hand.
             computerHand += drawnCard;
-            // Display the card.
-            System.out.println("The computer drew:\n" + displayCard(drawnCard) + "\n");
+            // Do not display the card for computer.
+            // System.out.println("The computer drew:\n" + displayCard(drawnCard) + "\n");
             // The computer skip counter is incremented.
             computerSkipCounter++;
             // If the computer skip counter is 3, the computer's turn ends.
-            if (computerSkipCounter == 3) {
+            if (computerSkipCounter % 3 == 0) {
                 // The computer's turn ends.
                 playerTurn = !playerTurn;
                 // The computer skip counter is reset.
