@@ -13,6 +13,22 @@
 
 import java.util.Scanner;
 
+// This class represents a player.
+class Player {
+    // The player's hand.
+    public String hand;
+    // The skip counter for player (max 3).
+    public int skipCounter = 0;
+
+    // Constructor.
+    Player() {
+        // Initialize the player's hand.
+        hand = "";
+        skipCounter = 0;
+    }
+}
+
+// This class represents the state of the game and tracks the game loop.
 class State {
     // Tracks the state of all the variables required.
     // By order of the supreme leader, arrays are not allowed.
@@ -22,16 +38,10 @@ class State {
     String drawPile;
     // The discard pile.
     String discardPile;
-    // The player's hand.
-    String playerHand;
-    // The computer's hand.
-    String computerHand;
     // Turn tracker.
     boolean playerTurn;
-    // The skip counter for player (max 3).
-    int playerSkipCounter = 0;
-    // The skip counter for computer (max 3).
-    int computerSkipCounter = 0;
+    // The player.
+    Player player, computer;
 
     // Constructor.
 
@@ -40,9 +50,10 @@ class State {
         // Initialize the state variables.
         drawPile = "";
         discardPile = "";
-        playerHand = "";
-        computerHand = "";
         playerTurn = false;
+        player = new Player();
+        computer = new Player();
+        // Initialize the game.
         init();
     }
 
@@ -102,7 +113,7 @@ class State {
             // Draw a card.
             String card = drawCard();
             // Add the card to the player's hand.
-            playerHand += card;
+            player.hand += card;
         }
 
         // Equip the computer hand with 5 cards.
@@ -110,7 +121,7 @@ class State {
             // Draw a card.
             String card = drawCard();
             // Add the card to the computer's hand.
-            computerHand += card;
+            computer.hand += card;
         }
 
         // Top card of the drawPile is added to the discardPile.
@@ -186,7 +197,7 @@ class State {
     }
 
     // Display either player's hand in a readable format.
-    public void displayPlayerHand(String playerHand) {
+    public void displayplayerHand(String playerHand) {
         // The player's hand.
         String hand = "";
         // For each card in the player's hand.
@@ -194,7 +205,7 @@ class State {
             // Add the card to the player's hand.
             hand += displayCard(playerHand.substring(i, i + 3));
             // Add a comma except for the last card.
-            if (i != playerHand.length() - 3) {
+            if (i != player.hand.length() - 3) {
                 hand += ", ";
             }
         }
@@ -227,12 +238,6 @@ class State {
                 drawPile = discardPile;
                 // The discard pile is reset.
                 discardPile = "";
-                // If the draw pile is still empty, the game is a draw.
-                if (drawPile.equals("")) {
-                    // The game is a draw.
-                    System.out.println("The game is a draw!");
-                    System.exit(0);
-                }
             }
 
             // The index.
@@ -260,7 +265,7 @@ class State {
             return false;
         }
         // Next, check if the card is in the player's hand.
-        if (!playerHand.contains(card)) {
+        if (!player.hand.contains(card)) {
             // The card is not in the player's hand.
             return false;
         }
@@ -298,7 +303,7 @@ class State {
             return false;
         }
         // Next, check if the card is in the player's hand.
-        if (!computerHand.contains(card)) {
+        if (!computer.hand.contains(card)) {
             // The card is not in the player's hand.
             return false;
         }
@@ -331,9 +336,9 @@ class State {
     // Check if the player has any valid cards to play.
     public boolean checkPlayerPlayable() {
         // For each card in the player's hand.
-        for (int i = 0; i < playerHand.length(); i += 3) {
+        for (int i = 0; i < player.hand.length(); i += 3) {
             // The card.
-            String card = playerHand.substring(i, i + 3);
+            String card = player.hand.substring(i, i + 3);
             // Check if the card is valid.
             if (isValidCard(card)) {
                 // Get the top card of the discard pile.
@@ -353,9 +358,9 @@ class State {
     // Get the first available valid card to play from the computer's hand.
     public String getValidComputerCard() {
         // For each card in the computer's hand.
-        for (int i = 0; i < computerHand.length(); i += 3) {
+        for (int i = 0; i < computer.hand.length(); i += 3) {
             // The card.
-            String card = computerHand.substring(i, i + 3);
+            String card = computer.hand.substring(i, i + 3);
             // Check if the card is valid.
             if (checkComputerCardValidity(card)) {                // The card is valid.
                 return card;
@@ -371,7 +376,7 @@ class State {
     public void PlayerTurn(Scanner sc) {
         // Display the player's hand.
         System.out.println("Your hand: ");
-        displayPlayerHand(playerHand);
+        displayplayerHand(player.hand);
 
         // Display the top card of the discard pile.
         System.out.println("Top card of the discard pile:\n" + displayCard(returnTopPlayedCard()));
@@ -383,16 +388,16 @@ class State {
             // Draw a card from the draw pile.
             String drawnCard = drawCard();
             // Add the card to the player's hand.
-            playerHand += drawnCard;
+            player.hand += drawnCard;
             // Display the card.
             System.out.println("You drew:\n" + displayCard(drawnCard) + "\n");
             // The player skip counter is incremented.
-            playerSkipCounter++;
+            player.skipCounter++;
             // If the player skip counter is 3, the player's turn ends.
-            if (playerSkipCounter % 3 == 0) {
+            if (player.skipCounter % 3 == 0) {
                 // The player's turn ends.
                 playerTurn = !playerTurn;
-                playerSkipCounter = 0;
+                player.skipCounter = 0;
             }
             return;
         }
@@ -409,7 +414,7 @@ class State {
             // Draw a card from the draw pile.
             String drawnCard = drawCard();
             // Add the card to the player's hand.
-            playerHand += drawnCard;
+            player.hand += drawnCard;
             // Display the card.
             System.out.println("You drew:\n" + displayCard(drawnCard) + "\n");
             // The player turn is flipped.
@@ -430,14 +435,14 @@ class State {
         } else {
             // The card is valid.
             // Remove the card from the player's hand.
-            playerHand = playerHand.substring(0, playerHand.indexOf(card)) + playerHand.substring(playerHand.indexOf(card) + 3);
+            player.hand = player.hand.substring(0, player.hand.indexOf(card)) + player.hand.substring(player.hand.indexOf(card) + 3);
             // Add the card to the discard pile.
             discardPile += card;
             // Display the card.
             System.out.println("You played:\n" + displayCard(card) + "\n");
 
             // The player skip counter is reset.
-            playerSkipCounter = 0;
+            player.skipCounter = 0;
         }
     }
 
@@ -450,7 +455,7 @@ class State {
         String card = getValidComputerCard();
 
         // Print how many cards the computer has.
-        System.out.println("The computer has " + (computerHand.length() / 3) + " cards.");
+        System.out.println("The computer has " + (computer.hand.length() / 3) + " cards.");
 
         if (card.equals("")) {
             // The computer has no valid cards to play.
@@ -458,31 +463,31 @@ class State {
             // Draw a card from the draw pile.
             String drawnCard = drawCard();
             // Add the card to the computer's hand.
-            computerHand += drawnCard;
+            computer.hand += drawnCard;
             // Do not display the card for computer.
             // System.out.println("The computer drew:\n" + displayCard(drawnCard) + "\n");
             // The computer skip counter is incremented.
-            computerSkipCounter++;
+            computer.skipCounter++;
             // If the computer skip counter is 3, the computer's turn ends.
-            if (computerSkipCounter % 3 == 0) {
+            if (computer.skipCounter % 3 == 0) {
                 // The computer's turn ends.
                 playerTurn = !playerTurn;
                 // The computer skip counter is reset.
-                computerSkipCounter = 0;
+                computer.skipCounter = 0;
             }
             return;
         }
 
         // The card is valid.
         // Remove the card from the computer's hand.
-        computerHand = computerHand.substring(0, computerHand.indexOf(card)) + computerHand.substring(computerHand.indexOf(card) + 3);
+        computer.hand = computer.hand.substring(0, computer.hand.indexOf(card)) + computer.hand.substring(computer.hand.indexOf(card) + 3);
         // Add the card to the discard pile.
         discardPile += card;
         // Display the card.
         System.out.println("The computer played:\n" + displayCard(card) + "\n");
 
         // The computer skip counter is reset.
-        computerSkipCounter = 0;
+        computer.skipCounter = 0;
     }
 
     // The game loop.
@@ -499,15 +504,21 @@ class State {
             }
 
             // Check if the player has won.
-            if (playerHand.equals("")) {
+            if (player.hand.equals("")) {
                 // The player has won.
                 System.out.println("You won!");
                 return;
             }
             // Check if the computer has won.
-            if (computerHand.equals("")) {
+            if (computer.hand.equals("")) {
                 // The computer has won.
                 System.out.println("The computer won!");
+                return;
+            }
+            // If both draw pile and discard pile are empty, the game is a draw.
+            if (drawPile.equals("") && discardPile.equals("")) {
+                // The game is a draw.
+                System.out.println("The game is a draw!");
                 return;
             }
         }
